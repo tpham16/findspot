@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost Pets Gallery</title>
+    <style>
+        .pet-card {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .pet-card img {
+            max-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lost Pets Gallery</h1>
+    {% for pet in lost_pets %}
+        <div class="pet-card">
+            <h2>{{ pet[1] }}</h2>
+            <img src="{{ url_for('static', filename='uploads/oreo.jpg') }}" alt="{{ pet[1] }}">
+            <p>Breed: {{ pet[2] }}</p>
+            <p>Color: {{ pet[3] }}</p>
+            <p>Sex: {{ pet[4] }}</p>
+            <p>Location: {{ pet[5] }}</p>
+            <p>Contact Info: {{ pet[6] }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
